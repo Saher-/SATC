@@ -1,0 +1,84 @@
+{% extends "layout.html"%}
+
+{% block title %}
+{{ super() }}
+SATC - Configure Parameters
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+<div class="inner">
+    <h2>Set System Parameters</h2>
+    <p>Configure the system's parameters to control the text pre-processing steps.</p>
+</div>
+{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+{{ super() }}
+<section>
+    <h3 class="major">Configure your own parameters</h3>
+    <p><b><mark>WARNING!! WILL TAKE A VERY LONG TIME! refer to Documentations for details! </mark></b></p>
+    <form>
+        <table>
+        <tr>
+            <td>
+                <input type="radio" id="option0" name="train_option" value="Op0" checked>
+                <label for="option0">OPTION Default</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                BEST PERFORMANCE
+            </td>
+            <td>
+                LEAST TRAINING TIME
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="option1" name="train_option" value="Op1">
+                <label for="option1">OPTION 1</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Punctuation Removal</td>
+            <td>Lower Case</td>
+            <td>Stop Words Removal</td>
+            <td>Lemmatization</td>
+            <td>Word Frequency</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="option2" name="train_option" value="Op2">
+                <label for="option2">OPTION 2</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Punctuation Removal</td>
+            <td>Stop Words Removal</td>
+            <td>POS Tagging</td>
+            <td>Lemmatization</td>
+            <td>Word Frequency</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" id="option3" name="train_option" value="Op3">
+                <label for="option3">OPTION 3</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Punctuation Removal</td>
+            <td>Stop Words Removal</td>
+            <td>POS Tagging</td>
+            <td>Lemmatization</td>
+        </tr>
+        </table>
+        <ul class="actions fit">
+            <li><input type="submit" value="TRAIN" class="button special fit"/></li>
+            <li><input type="reset" value="RESET" class="button fit"/></li>
+        </ul>
+    </form>
+</section>
+{% endblock %}

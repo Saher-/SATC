@@ -1,0 +1,66 @@
+{% extends "layout.html"%}
+
+{% block title %}
+{{ super() }}
+SATC - Single Test
+{% endblock %}
+
+{% block header %}
+{{ super() }}
+<div class="inner">
+    <h2>Single Test Results</h2>
+    <p>Results of (Classification \ Accuracy) on running your test sentence on the system's Classifiers.</p>
+</div>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+{{ super() }}
+<section>
+    <h3 class="major">Form</h3>
+    <form method="post" action="single_test">
+        <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+                <label for="test-name">Test Sentence</label>
+                <input type="text" name="test-name" id="test-name" value="" />
+            </div>
+            <div class="6u$ 12u$(xsmall)">
+                <label for="test-classifier">Classifier</label>
+                <div class="select-wrapper">
+                    <select name="test-classifier" id="test-classifier">
+                        <option value="">-</option>
+                        <option value="ALL">All Classifiers (Default)</option>
+                        <option value="NB">NaiveBayes</option>
+                        <option value="DT">Decision Tree</option>
+                        <option value="ME">Maximum Entropy</option>
+                        <option value="MV"><b>Maximum Vote</b></option>
+                    </select>
+                </div>
+            </div>
+            <div class="4u 12u$(small)">
+                <input type="radio" id="output-text" name="output" value="text" checked>
+                <label for="output-text">Output as TEXT</label>
+            </div>
+            <div class="4u 12u$(small)">
+                <input type="radio" id="output-table" name="output" value="table">
+                <label for="output-table">Output as TABLE</label>
+            </div>
+            <div class="12u$">
+                <ul class="actions">
+                    <li>
+                        <input type="submit" value="Send Message" class="special" />
+                    </li>
+                    <li>
+                        <input type="reset" value="Reset" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    <div class="12u$">
+        <label>Output</label>
+        {% block output %}
+        {% endblock %}
+    </div>
+</section>
+{% endblock %}

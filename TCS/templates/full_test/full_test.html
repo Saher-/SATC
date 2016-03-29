@@ -1,0 +1,150 @@
+{% extends "layout.html"%}
+
+{% block title %}
+{{ super() }}
+SATC - Full Test
+{% endblock %}
+
+
+{% block header %}
+{{ super() }}
+<div class="inner">
+    <h2>Full Test Results</h2>
+    <p>Results of (Accuracy / Precision / Recall) on running your corpus on the system's Classifiers.</p>
+</div>
+{% endblock %}
+
+
+<!-- Content -->
+{% block content %}
+{{ super() }}
+<h3>Choose: </h3>
+<input type="button" class="button" name="text" value="Show Result as Text" onclick="show_text()" />
+<input type="button" class="button" name="table" value="Show Result as Table" onclick="show_table()" />
+<br>
+<h3>OUTPUT: </h3>
+<!-- NaiveBayes results -->
+<section id="text" style="display:none;">
+    <section>
+        <h4>NaiveBayes Classifier</h4>
+        <blockquote>
+            <ul>
+                <li>Classifier Accuracy: &Tab;<b>{{ val_nb[1] }}&#37;</b></li>
+                <li>Classifier Precision <i>POS: </i>&Tab;<b>{{ val_nb[2] }}&#37;</b></li>
+                <li>Classifier Precision <i>NEG: </i>&Tab;<b>{{ val_nb[3] }}&#37;</b></li>
+                <li>Classifier Recall <i>POS: </i>&Tab;<b>{{ val_nb[4] }}&#37;</b></li>
+                <li>Classifier Recall <i>NEG: </i>&Tab;<b>{{ val_nb[5] }}&#37;</b></li>
+            </ul>
+        </blockquote>
+    </section>
+
+    <!-- Maximum Entropy results -->
+     <section>
+         <h4>MaxEnt Classifier</h4>
+         <blockquote>
+             <ul>
+                 <li>Classifier Accuracy: &Tab;<b>{{ val_me[1] }}&#37;</b></li>
+                 <li>Classifier Precision <i>POS: </i>&Tab;<b>{{ val_me[2] }}&#37;</b></li>
+                 <li>Classifier Precision <i>NEG: </i>&Tab;<b>{{ val_me[3] }}&#37;</b></li>
+                 <li>Classifier Recall <i>POS: </i>&Tab;<b>{{ val_me[4] }}&#37;</b></li>
+                 <li>Classifier Recall <i>NEG: </i>&Tab;<b>{{ val_me[5] }}&#37;</b></li>
+             </ul>
+         </blockquote>
+     </section>
+
+    <!-- Decision tree results -->
+    <section>
+        <h4>DecisionTree Classifier</h4>
+        <blockquote>
+            <ul>
+                <li>Classifier Accuracy: &Tab;<b>{{ val_dt[1] }}&#37;</b></li>
+                <li>Classifier Precision <i>POS: </i>&Tab;<b>{{ val_dt[2] }}&#37;</b></li>
+                <li>Classifier Precision <i>NEG: </i>&Tab;<b>{{ val_dt[3] }}&#37;</b></li>
+                <li>Classifier Recall <i>POS: </i>&Tab;<b>{{ val_dt[4] }}&#37;</b></li>
+                <li>Classifier Recall <i>NEG: </i>&Tab;<b>{{ val_dt[5] }}&#37;</b></li>
+            </ul>
+        </blockquote>
+    </section>
+
+    <!-- Maximum Vote results -->
+    <section>
+        <h4>MaxVote Classifier</h4>
+        <blockquote>
+            <ul>
+                <li>Classifier Accuracy: &Tab;<b>{{ val_mv[1] }}&#37;</b></li>
+                <li>Classifier Precision <i>POS: </i>&Tab;<b>{{ val_mv[2] }}&#37;</b></li>
+                <li>Classifier Precision <i>NEG: </i>&Tab;<b>{{ val_mv[3] }}&#37;</b></li>
+                <li>Classifier Recall <i>POS: </i>&Tab;<b>{{ val_mv[4] }}&#37;</b></li>
+                <li>Classifier Recall <i>NEG: </i>&Tab;<b>{{ val_mv[5] }}&#37;</b></li>
+            </ul>
+        </blockquote>
+    </section>
+</section>
+
+<section id="table" style="display:none;">
+    <div class="table-wrapper">
+        <table>
+            <thead>
+            <tr>
+                <th>Classifier</th>
+                <th>Accuracy</th>
+                <th>Precision <i>POS</i></th>
+                <th>Precision <i>NEG</i></th>
+                <th>Recall  <i>POS</i></th>
+                <th>Recall  <i>NEG</i></th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NaiveBayes</td>
+                    <td><b>{{ val_nb[1] }}&#37;</b></td>
+                    <td><b>{{ val_nb[2] }}&#37;</b></td>
+                    <td><b>{{ val_nb[3] }}&#37;</b></td>
+                    <td><b>{{ val_nb[4] }}&#37;</b></td>
+                    <td><b>{{ val_nb[5] }}&#37;</b></td>
+                </tr>
+                <tr>
+                    <td>DecisionTree</td>
+                    <td><b>{{ val_dt[1] }}&#37;</b></td>
+                    <td><b>{{ val_dt[2] }}&#37;</b></td>
+                    <td><b>{{ val_dt[3] }}&#37;</b></td>
+                    <td><b>{{ val_dt[4] }}&#37;</b></td>
+                    <td><b>{{ val_dt[5] }}&#37;</b></td>
+                </tr>
+                <tr>
+                    <td>MaxEnt</td>
+                    <td><b>{{ val_me[1] }}&#37;</b></td>
+                    <td><b>{{ val_me[2] }}&#37;</b></td>
+                    <td><b>{{ val_me[3] }}&#37;</b></td>
+                    <td><b>{{ val_me[4] }}&#37;</b></td>
+                    <td><b>{{ val_me[5] }}&#37;</b></td>
+                </tr>
+                <tr>
+                    <td>MaxVote</td>
+                    <td><b>{{ val_mv[1] }}&#37;</b></td>
+                    <td><b>{{ val_mv[2] }}&#37;</b></td>
+                    <td><b>{{ val_mv[3] }}&#37;</b></td>
+                    <td><b>{{ val_mv[4] }}&#37;</b></td>
+                    <td><b>{{ val_mv[5] }}&#37;</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block script%}
+<script type="text/javascript">
+function show_text() {
+   document.getElementById('text').style.display = "";
+   document.getElementById('table').style.display = "none";
+}
+</script>
+<script type="text/javascript">
+function show_table() {
+   document.getElementById('table').style.display = "";
+   document.getElementById('text').style.display = "none";
+}
+</script>
+{% endblock %}

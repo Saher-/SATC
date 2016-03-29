@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SATC - Sentiment Analysis Text Classification</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{{ url_for(('static'), filename='js/ie/html5shiv.js') }}"></script><![endif]-->
+		<link rel="stylesheet" href="{{ url_for(('static'), filename='css/main.css') }}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="{{ url_for(('static'), filename='css/ie9.css') }}" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{ url_for(('static'), filename='css/ie8.css') }}" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+                <!-- Header -->
+					<header id="header">
+						<h1><a href="{{ url_for('index') }}">TCS - Text Classification System<sub>in Python</sub></a></h1>
+                        <nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="{{ url_for('index') }}">Home</a></li>
+								<li><a href="{{ url_for('parameters') }}">Parameters</a></li>
+								<li><a href="{{ url_for('singletest') }}">Test it Yourself</a></li>
+								<li><a href="{{ url_for('fulltest') }}">Full Test</a></li>
+                                <li><a href="{{ url_for('documentation') }}">Documentation</a></li>
+                                <li></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+					</header>
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon fa-diamond"></span></div>
+							<h2>This is Text Classification System</h2>
+							<p>Simple Classification system that you can control and customize, or simply run the defaults</p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a class="image"><img src="{{ url_for(('static'), filename='images/pic01.jpg') }}" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Parameters</h2>
+										<p>Change the system parameters for the text pre-processing phase.
+                                            <br>Upload your own training \ testing datasets.<br>Find out how good your customized system will do!
+											<br><b><mark>WARNING!! WILL TAKE A VERY LONG TIME! refer to Documentations for details! </mark></b>
+										</p>
+										<a href="{{ url_for('parameters') }}" class="special">Set Parameters</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a class="image"><img src="{{ url_for(('static'), filename='images/pic02.jpg') }}" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Test it yourself</h2>
+										<p>Of course you can test it yourself! just type in or copy whatever review
+                                            sentence you want to classiffy, and leave the rest to the system.
+                                            <br><i>(for custmozied options see Parameters section)</i> </p>
+										<a href="{{ url_for('singletest') }}" class="special">Test it</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a class="image"><img src="{{ url_for(('static'), filename='images/pic03.jpg') }}" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Full Test</h2>
+										<p>Run the system's default full comprehensive test with a bunch of test cases.
+                                            <br>Trust me! it's worth the wait! <br><i>(for customized options see Parameters section)</i></p>
+										<a href="{{ url_for('fulltest') }}" class="special">Run it</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Documentation</h2>
+									<p>This system is build in Python as a project for a master degree class at DePaul University
+                                        <i> <b>CSC 594 - Topics in AI (Text Mining).</b></i>
+                                        <br>Its a customizable system for sentiment analysis and text classification,
+                                        where you can change the text pre-processing steps to your own choosing,
+										or simply run the defaults! </p>
+									<ul class="actions">
+										<li><a href="{{ url_for('documentation') }}" class="button">Learn More</a></li>
+									</ul>
+								</div>
+							</section>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">About This Project</h2>
+							<ul>
+								<li>
+                                    <b>A Future versions</b> of the system will be stable, reliable, and efficient. Allowing the user
+									to upload any corpus to run the training / testing on. (Refer to Documentation).
+                                </li>
+                                <li>
+                                    <b>A Second version</b> of the system with interactive, friendly, responsive (Mobile Accessible)
+                                    User Interface AND a customizable configurations for the text pre-processing steps.
+                                </li>
+                                <li>
+                                    <b>The First version</b> of the system is running on the command line, and with fixed parameters.
+                                </li>
+                            </ul>
+							<div />
+							<ul class="contact">
+								<li class="fa-phone">(630) 474-4755</li>
+								<li class="fa-envelope"><a>sahertalaat@gmail.com</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; SaherY 2015.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for(('static'), filename='js/skel.min.js') }}"></script>
+			<script src="{{ url_for(('static'), filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for(('static'), filename='js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for(('static'), filename='js/util.js') }}"></script>
+			<!--[if lte IE 8]><script src="{{ url_for(('static'), filename='js/ie/respond.min.js') }}"></script><![endif]-->
+			<script src="{{ url_for(('static'), filename='js/main.js') }}"></script>
+
+	</body>
+</html>

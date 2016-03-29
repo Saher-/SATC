@@ -1,0 +1,26 @@
+{% extends "single_test/single_test.html" %}
+
+{% block output %}
+{{ super() }}
+<section>
+    <h3>Default</h3>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+            <tr>
+                <th>Classifier</th>
+                <th>Accuracy</th>
+                <th>Classification</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>DecisionTree</td>
+                    <td><b>{{ val_dt[2] }}&#37;</b></td>
+                    <td><b>{{ val_dt[1] }}</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

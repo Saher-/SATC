@@ -1,0 +1,69 @@
+{% extends "layout.html"%}
+
+{% block header %}
+{{ super() }}
+<div class="inner">
+    <h2>Training is Done</h2>
+    <p>WoW....so you decided to wait <b>THAT LONG</b> after all!!!<br>
+    It might not be the best experience you had so far, but I promise, I'll keep working on the system until it's fully customized. <br>
+    Below is your customizable parameters, <b>you can start testing your classifiers</b> </p>
+</div>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<h4>Your Parameters</h4>
+<blockquote>
+    <ul>
+        {% if val[0] == 0 %}
+            Punctuation Removal: OFF
+        {% elif val[0] == 1 %}
+            <b>Punctuation Removal: ON</b>
+        {% endif %}
+    </ul>
+    <ul>
+        {% if val[1] == 0 %}
+            Lower Case: OFF
+        {% elif val[1] == 1 %}
+            <b>Lower Case: ON</b>
+        {% endif %}
+    </ul>
+    <ul>
+        {% if val[2] == 0 %}
+            Stop Words: OFF
+        {% elif val[2] == 1 %}
+            <b>Stop Words: ON</b>
+        {% endif %}
+    </ul>
+    <ul>
+        {% if val[3] == 0 %}
+            POS Tagging: OFF
+        {% elif val[3] == 1 %}
+            <b>POS Tagging: ON</b>
+        {% endif %}
+    </ul>
+    <ul>
+        {% if val[4] == 0 %}
+            Lemmatization: OFF
+        {% elif val[4] == 1 %}
+            <b>Lemmatization: ON</b>
+        {% endif %}
+    </ul>
+    <ul>
+        {% if val[5] == 0 %}
+            Bigrams: OFF
+        {% elif val[5] == 1 %}
+            <b>Bigrams: ON</b>
+        {% endif %}
+    </ul>
+    <ul>
+        {% if val[6] == 0 %}
+            Word Frequency: OFF
+        {% elif val[6] == 1 %}
+            <b>Word Frequency: ON</b>
+        {% endif %}
+    </ul>
+</blockquote>
+
+</section>
+{% endblock %}
